@@ -1,0 +1,39 @@
+{
+    "name": "<name>",
+    "version": "0.0.1",
+    "description": "<description>",
+    "keywords": [],
+    "homepage": "<url>",
+    "bugs": {
+        "url": "https://github.com/bradgarropy/backup/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Brad Garropy",
+        "email": "bradgarropy@gmail.com",
+        "url": "https://bradgarropy.com"
+    },
+    "main": "<path>",
+    "bin": {
+        "<name>": "<path>"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bradgarropy/backup"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.6.0",
+        "eslint-config-bradgarropy": "^1.4.2",
+        "eslint-plugin-jsx-a11y": "^6.3.1",
+        "eslint-plugin-react": "^7.20.5",
+        "eslint-plugin-react-hooks": "^4.0.8",
+        "eslint-plugin-svelte3": "^2.7.3",
+        "prettier": "^2.1.1"
+    },
+    "peerDependencies": {}
+}
