@@ -3,9 +3,11 @@ const shell = require("./shell")
 const cwd = "d:\\projects\\dotfiles"
 const options = {cwd}
 
-const commit = () => {
+const commit = message => {
+    shell("ls", options)
     shell("git add .", options)
-    shell("git commit -m 'update voicemeeter settings.'", options)
+    shell("git status", options)
+    shell(`git commit -m "${message}"`, options)
     shell("git push", options)
 }
 

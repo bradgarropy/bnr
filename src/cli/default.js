@@ -66,7 +66,10 @@ const handler = argv => {
 
     // commit changes
     if (commit) {
-        git.commit()
+        const message =
+            app === "all" ? "update settings." : `update ${app} settings.`
+
+        git.commit(message)
     }
 
     // log diff
