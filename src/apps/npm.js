@@ -1,5 +1,5 @@
 const fs = require("fs")
-const shell = require("./utils/shell")
+const shell = require("../utils/shell")
 
 const backup = () => {
     // packages
@@ -20,9 +20,8 @@ const restore = () => {
         "utf8",
     )
 
-    text.split("\n")
-        .filter(line => line)
-        .forEach(pkg => shell(`npm install ${pkg} --global`))
+    const packages = JSON.parse(text)
+    packages.forEach(pkg => shell(`npm install ${pkg} --global`))
 }
 
 module.exports = {backup, restore}

@@ -1,5 +1,5 @@
 const fs = require("fs")
-const shell = require("./utils/shell")
+const shell = require("../utils/shell")
 
 const backup = () => {
     // extensions
@@ -25,13 +25,16 @@ const restore = () => {
         "utf8",
     )
 
-    text.split("\n")
-        .filter(line => line)
-        .forEach(extension => {
-            shell(`code --install-extension ${extension}`)
-        })
+    const extensions = JSON.parse(text)
+
+    extensions.forEach(extension => {
+        shell(`code --install-extension ${extension}`)
+    })
 
     // settings
+    shell(
+        "cp /d/projects/dotfiles/vscode/settings.json /c/users/bradg/appdata/roaming/code/user/settings.json",
+    )
 }
 
 module.exports = {backup, restore}

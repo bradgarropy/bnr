@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
 const yargs = require("yargs")
-const defaultCommand = require("./default")
+const backupCommand = require("./backup")
+const restoreCommand = require("./restore")
 const {name} = require("../../package.json")
 
 yargs
     .scriptName(name)
-    .command(defaultCommand)
+    .command(backupCommand)
+    .command(restoreCommand)
     .alias("help", "h")
     .alias("version", "v").argv

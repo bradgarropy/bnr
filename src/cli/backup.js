@@ -1,12 +1,12 @@
-const npm = require("../npm")
-const obs = require("../obs")
-const vscode = require("../vscode")
+const npm = require("../apps/npm")
+const obs = require("../apps/obs")
+const vscode = require("../apps/vscode")
 const git = require("../utils/git")
-const streamdeck = require("../streamdeck")
-const voicemeeter = require("../voicemeeter")
+const streamdeck = require("../apps/streamdeck")
+const voicemeeter = require("../apps/voicemeeter")
 
-const command = "* [app]"
-const description = ""
+const command = "backup [app]"
+const description = "Backup and optionally commit application settings."
 
 const builder = yargs => {
     yargs
@@ -30,8 +30,6 @@ const builder = yargs => {
 }
 
 const handler = argv => {
-    console.log(argv)
-
     const {app, commit} = argv
 
     switch (app) {
