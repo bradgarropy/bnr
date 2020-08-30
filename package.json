@@ -1,5 +1,5 @@
 {
-    "name": "<name>",
+    "name": "backup",
     "version": "0.0.1",
     "description": "<description>",
     "keywords": [],
@@ -13,18 +13,20 @@
         "email": "bradgarropy@gmail.com",
         "url": "https://bradgarropy.com"
     },
-    "main": "<path>",
+    "main": "src/cli/index.js",
     "bin": {
-        "<name>": "<path>"
+        "bgup": "src/cli/index.js"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/bradgarropy/backup"
     },
     "scripts": {
-        "start": ""
+        "start": "node src/cli/index.js"
     },
-    "dependencies": {},
+    "dependencies": {
+        "yargs": "^15.4.1"
+    },
     "devDependencies": {
         "babel-eslint": "^10.1.0",
         "eslint": "^7.6.0",
