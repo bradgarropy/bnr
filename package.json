@@ -15,7 +15,7 @@
     },
     "main": "src/cli/index.js",
     "bin": {
-        "bgup": "src/cli/index.js"
+        "bnr": "src/cli/index.js"
     },
     "repository": {
         "type": "git",

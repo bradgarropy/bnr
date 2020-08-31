@@ -10,6 +10,14 @@ const backup = () => {
     shell(
         "cp -r /c/users/bradg/appdata/roaming/obs-studio/basic/scenes /d/projects/dotfiles/obs",
     )
+
+    // remove bak files
+    const files = shell("find /d/projects/dotfiles/obs -name *.bak")
+
+    files
+        .split("\n")
+        .filter(file => file)
+        .forEach(file => shell(`rm ${file}`))
 }
 
 const restore = () => {
