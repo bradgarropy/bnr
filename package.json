@@ -1,8 +1,17 @@
 {
-    "name": "bnr",
-    "version": "0.0.1",
+    "name": "@bradgarropy/bnr",
+    "version": "0.1.0",
     "description": "🔙🆙 backup and restore application settings",
-    "keywords": [],
+    "keywords": [
+        "backup",
+        "restore",
+        "cli",
+        "npm",
+        "obs",
+        "streamdeck",
+        "voicemeeter",
+        "vscode"
+    ],
     "homepage": "https://github.com/bradgarropy/bnr",
     "bugs": {
         "url": "https://github.com/bradgarropy/bnr/issues"
