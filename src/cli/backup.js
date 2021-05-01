@@ -1,8 +1,9 @@
+const goxlr = require("../apps/goxlr")
 const npm = require("../apps/npm")
 const obs = require("../apps/obs")
+const streamdeck = require("../apps/streamdeck")
 const vscode = require("../apps/vscode")
 const git = require("../utils/git")
-const streamdeck = require("../apps/streamdeck")
 
 const command = "backup [app]"
 const description = "Backup and optionally commit application settings."
@@ -11,7 +12,7 @@ const builder = yargs => {
     yargs
         .positional("app", {
             type: "string",
-            choices: ["all", "npm", "obs", "streamdeck", "vscode"],
+            choices: ["all", "goxlr", "npm", "obs", "streamdeck", "vscode"],
             default: "all",
         })
         .option("commit", {
@@ -25,6 +26,10 @@ const handler = argv => {
     const {app, commit} = argv
 
     switch (app) {
+        case "goxlr":
+            goxlr.backup()
+            break
+
         case "npm":
             npm.backup()
             break
@@ -42,6 +47,7 @@ const handler = argv => {
             break
 
         case "all":
+            goxlr.backup()
             npm.backup()
             obs.backup()
             streamdeck.backup()

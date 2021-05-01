@@ -6,6 +6,7 @@
         "backup",
         "restore",
         "cli",
+        "goxlr",
         "npm",
         "obs",
         "streamdeck",
