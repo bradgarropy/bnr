@@ -3,7 +3,6 @@ const obs = require("../apps/obs")
 const vscode = require("../apps/vscode")
 const git = require("../utils/git")
 const streamdeck = require("../apps/streamdeck")
-const voicemeeter = require("../apps/voicemeeter")
 
 const command = "backup [app]"
 const description = "Backup and optionally commit application settings."
@@ -12,14 +11,7 @@ const builder = yargs => {
     yargs
         .positional("app", {
             type: "string",
-            choices: [
-                "all",
-                "npm",
-                "obs",
-                "streamdeck",
-                "voicemeeter",
-                "vscode",
-            ],
+            choices: ["all", "npm", "obs", "streamdeck", "vscode"],
             default: "all",
         })
         .option("commit", {
@@ -45,10 +37,6 @@ const handler = argv => {
             streamdeck.backup()
             break
 
-        case "voicemeeter":
-            voicemeeter.backup()
-            break
-
         case "vscode":
             vscode.backup()
             break
@@ -57,7 +45,6 @@ const handler = argv => {
             npm.backup()
             obs.backup()
             streamdeck.backup()
-            voicemeeter.backup()
             vscode.backup()
             break
     }
